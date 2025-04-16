@@ -1,11 +1,93 @@
 import React, { useState, useEffect } from 'react';
-import { multiplyPhases, getBlochPosition, getStateDescription } from './utils/quantumMath';
 import QuantumRibbon from './components/QuantumRibbon/QuantumRibbon';
 import BlochSphere from './components/BlochSphere/BlochSphere';
 import GateControls from './components/GateControls/GateControls';
 import History from './components/History/History';
 import StateSelector from './components/StateSelector/StateSelector';
 import './App.css';
+
+// Utility functions for quantum state manipulations
+const multiplyPhases = (phase1, phase2) => {
+  if (phase1 === '1') return phase2;
+  if (phase1 === '-1') {
+    if (phase2 === '1') return '-1';
+    if (phase2 === '-1') return '1';
+    if (phase2 === 'i') return '-i';
+    if (phase2 === '-i') return 'i';
+  }
+  if (phase1 === 'i') {
+    if (phase2 === '1') return 'i';
+    if (phase2 === '-1') return '-i';
+    if (phase2 === 'i') return '-1';
+    if (phase2 === '-i') return '1';
+  }
+  if (phase1 === '-i') {
+    if (phase2 === '1') return '-i';
+    if (phase2 === '-1') return 'i';
+    if (phase2 === 'i') return '1';
+    if (phase2 === '-i') return '-1';
+  }
+  return '1'; // Default
+};
+
+const getBlochPosition = (state, phase) => {
+  // Default position for unknown states
+  let theta = 0;
+  let phi = 0;
+
+  // Pure states
+  if (state === '|0⟩') {
+    theta = 0; // North pole
+    phi = 0;
+  } else if (state === '|1⟩') {
+    theta = Math.PI; // South pole
+    phi = 0;
+  }
+  // Superposition states on the equator
+  else if (state === '|+⟩') {
+    theta = Math.PI / 2;
+    phi = 0; // Right (0°)
+  } else if (state === '|-⟩') {
+    theta = Math.PI / 2;
+    phi = Math.PI; // Left (180°)
+  } else if (state === '|i⟩') {
+    theta = Math.PI / 2;
+    phi = Math.PI / 2; // Top (90°)
+  } else if (state === '|-i⟩') {
+    theta = Math.PI / 2;
+    phi = -Math.PI / 2; // Bottom (270°)
+  }
+
+  // Apply phase correction if needed
+  if (phase === '-1') {
+    phi = (phi + Math.PI) % (2 * Math.PI);
+  } else if (phase === 'i') {
+    phi = (phi + Math.PI / 2) % (2 * Math.PI);
+  } else if (phase === '-i') {
+    phi = (phi - Math.PI / 2) % (2 * Math.PI);
+  }
+
+  return { theta, phi };
+};
+
+const getStateDescription = (state) => {
+  switch (state) {
+    case '|0⟩':
+      return 'Computational basis state |0⟩ - 100% blue';
+    case '|1⟩':
+      return 'Computational basis state |1⟩ - 100% red';
+    case '|+⟩':
+      return 'Equal superposition |+⟩ = (|0⟩ + |1⟩)/√2 - 50% blue, 50% red';
+    case '|-⟩':
+      return 'Equal superposition |-⟩ = (|0⟩ - |1⟩)/√2 - 50% blue, 50% red';
+    case '|i⟩':
+      return 'Equal superposition |i⟩ = (|0⟩ + i|1⟩)/√2 - 50% blue, 50% red';
+    case '|-i⟩':
+      return 'Equal superposition |-i⟩ = (|0⟩ - i|1⟩)/√2 - 50% blue, 50% red';
+    default:
+      return 'Unknown quantum state';
+  }
+};
 
 const App = () => {
   const [currentState, setCurrentState] = useState('|0⟩');
