@@ -1,0 +1,86 @@
+.quantum-ribbon-simulator {
+  font-family: 'Arial, sans-serif';
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.state-info {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ribbon-container {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.bloch-sphere-container {
+  margin: 20px auto;
+  text-align: center;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.state-selector {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.state-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.history-container {
+  max-height: 200px;
+  overflow-y: auto;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.history-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.history-container li {
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}
+
+.phase-label {
+  margin-top: 5px;
+  font-weight: bold;
+}

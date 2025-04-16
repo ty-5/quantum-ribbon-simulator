@@ -1,0 +1,13 @@
+.bloch-sphere {
+    margin: 20px auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.bloch-sphere h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
