@@ -1,0 +1,77 @@
+.two-qubit-ribbons {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.qubit-container {
+    width: 100%;
+}
+
+.qubit-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.entanglement-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60px;
+    position: relative;
+}
+
+.entanglement-line {
+    height: 100%;
+}
+
+.entanglement-label {
+    color: #ff00ff;
+    font-weight: bold;
+    font-size: 0.9em;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid #ff00ff;
+}
+
+.no-entanglement {
+    color: #aaa;
+    font-style: italic;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.state-display {
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    width: 80%;
+}
+
+.composite-state {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.state-description {
+    font-size: 0.9em;
+    color: #555;
+}

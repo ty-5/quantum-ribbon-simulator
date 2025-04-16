@@ -1,0 +1,38 @@
+.bloch-sphere-3d {
+    margin: 20px auto;
+    text-align: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 320px;
+}
+
+.bloch-sphere-3d h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.bloch-sphere-3d svg {
+    margin: 0 auto;
+    display: block;
+}
+
+.state-info {
+    margin-top: 10px;
+    padding: 5px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+}
+
+.state-info p {
+    margin: 5px 0;
+}
+
+/* Enhance text readability */
+text {
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 3px white, 0 0 3px white;
+}
