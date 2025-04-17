@@ -1,52 +1,62 @@
 .two-qubit-controls {
-    background-color: white;
-    padding: 15px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  /* Fixed dimensions to prevent layout shifting */
+  min-height: 220px;
+  width: 100%;
 }
 
-.qubit-section,
-.two-qubit-section {
-    margin-bottom: 15px;
+.qubit-section, .two-qubit-section {
+  margin-bottom: 15px;
+  /* Fixed height for each section */
+  min-height: 60px;
 }
 
-.qubit-section h3,
-.two-qubit-section h3 {
-    margin-top: 0;
-    margin-bottom: 10px;
-    color: #333;
-    text-align: center;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #eee;
+.qubit-section h3, .two-qubit-section h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+  text-align: center;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  /* Fixed height for headings */
+  height: 20px;
 }
 
 .controls {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  /* Fixed height for controls area */
+  min-height: 40px;
 }
 
 .controls button {
-    padding: 10px 15px;
-    border: 1px solid;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.3s;
+  padding: 10px 15px;
+  border: 1px solid;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  /* Fixed dimensions for buttons */
+  min-width: 100px;
+  height: 40px;
 }
 
 .controls button:hover {
-    opacity: 0.8;
-    transform: translateY(-2px);
+  opacity: 0.8;
+  transform: translateY(-2px);
 }
 
 .two-qubit-section {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 2px dashed #eee;
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 2px dashed #eee;
 }
 
 .two-qubit-section .controls button {
-    font-weight: bold;
+  font-weight: bold;
 }
